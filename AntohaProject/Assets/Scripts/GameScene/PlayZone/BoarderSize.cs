@@ -5,15 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class BoarderSize : MonoBehaviour
 {
-    [SerializeField] private Camera camera;
-    private const float FullSize = 20f;
+    //[SerializeField] private Camera camera;
+    private const float FullSize = 2f;
     private void Start()
     {
         SetSize();
     }
     private void SetSize()
     {
-        float yScale = camera.ScreenToWorldPoint(Screen.safeArea.max).y * FullSize;
+        float yScale = new SafeAreaData().GetMax().y * FullSize;
         BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.size = new Vector2(boxCollider2D.size.x, yScale);
     }

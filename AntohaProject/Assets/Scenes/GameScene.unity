@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801a9e3bf5d8a6a479eebba00211c2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
 --- !u!61 &312213233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -263,6 +262,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 20}
   m_EdgeRadius: 0
+--- !u!1 &340638304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340638306}
+  - component: {fileID: 340638305}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &340638305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340638304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5080998caa2884985c155f609678dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScene: {fileID: 11400000, guid: 7b6629ff70ce3b84a8d5fafa8f6fc40c, type: 2}
+  gameplay: {fileID: 11400000, guid: 9c1e00ae06bdc994ea215655507b3154, type: 2}
+--- !u!4 &340638306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340638304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,11 +551,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: snapX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: snapY
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: deadZone
@@ -651,7 +696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801a9e3bf5d8a6a479eebba00211c2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
 --- !u!61 &1139653633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -792,6 +836,7 @@ GameObject:
   - component: {fileID: 1661024206}
   - component: {fileID: 1661024209}
   - component: {fileID: 1661024210}
+  - component: {fileID: 1661024211}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -926,6 +971,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.315, y: 3.915}
   m_EdgeRadius: 0
+--- !u!114 &1661024211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661024204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7274561b673a0054fb5b318503e52913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865925143
 GameObject:
   m_ObjectHideFlags: 0
