@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
             StartCoroutine(AddScene(savedSceneName));
         }
     }
-    public void Load(int level)
+    public void Load()
     {
         if (!string.IsNullOrEmpty(levelName.GetName()))
         {

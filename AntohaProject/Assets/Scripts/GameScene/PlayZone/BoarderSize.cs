@@ -4,8 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class BoarderSize : MonoBehaviour
-{
-    //[SerializeField] private Camera camera;
+{ 
     private const float FullSize = 2f;
     private void Start()
     {
