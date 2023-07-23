@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   waves:
-  - enemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    countInWave: 2
-    WaitAfterWave: 10
-  - enemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    countInWave: 5
+  - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
+    CountInWave: 0
+    WaitAfterWave: 1
+    Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}
+  - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
+    CountInWave: 0
     WaitAfterWave: 5
-  - enemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    countInWave: 10
+    Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}
+  - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
+    CountInWave: 0
     WaitAfterWave: 5
+    Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}

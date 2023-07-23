@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Level0
   m_EditorClassIdentifier: 
   waves:
-  - enemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    countInWave: 10
+  - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
+    CountInWave: 0
     WaitAfterWave: 10
-  - enemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    countInWave: 10
+    Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}
+  - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
+    CountInWave: 0
     WaitAfterWave: 0
+    Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}

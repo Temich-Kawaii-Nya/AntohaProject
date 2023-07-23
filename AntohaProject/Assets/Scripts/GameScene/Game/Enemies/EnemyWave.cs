@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,14 +18,22 @@ public class EnemyWave : MonoBehaviour
     {
         StartCoroutine(ActivateEnemy()); 
     }
+    public PathData GetPath()
+    {
+        return levelData.waves[indexWave].Path;
+    }
     public void Generate()
     {
+        int offset = 1;
+        Vector2 startPosition = new Vector2(0, new SafeAreaData().GetMax().y + offset);
         foreach (var wave in levelData.waves)
         {
-            for (int  i = 0;  i < wave.countInWave;  i++)
+            for (int  i = 0;  i < wave.CountInWave;  i++)
             {
-                var enemy = Instantiate(wave.enemyPrefub, transform);
+                var enemy = Instantiate(wave.EnemyPrefub, transform);
+                enemy.transform.position = startPosition; 
                 enemy.SetActive(false);
+                enemy.GetComponent<EnemiesMovement>().SetPath(wave.Path);
                 enemies.Add(enemy);
             }
         }
@@ -32,8 +41,7 @@ public class EnemyWave : MonoBehaviour
     public IEnumerator ActivateEnemy()
     {
         WaitForSeconds wait = new WaitForSeconds(0.5f);
-        var count = levelData.waves[indexWave].countInWave;
-         
+        var count = levelData.waves[indexWave].CountInWave;
         while(count > 0)
         {
             count--;

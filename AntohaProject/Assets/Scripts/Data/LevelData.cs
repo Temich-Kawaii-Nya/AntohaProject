@@ -9,7 +9,8 @@ public class LevelData : ScriptableObject
 [System.Serializable]
 public class Wave
 {
-    public GameObject enemyPrefub;
-    [Range(1, 100)] public int countInWave;
+    public GameObject EnemyPrefub;
+    [Range(1, 100)] public int CountInWave;
     [Range(1, 600)] public int WaitAfterWave;
+    public PathData Path;
 }
