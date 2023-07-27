@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    CountInWave: 0
+    CountInWave: 9
     WaitAfterWave: 1
     Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}
   - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    CountInWave: 0
+    CountInWave: 19
     WaitAfterWave: 5
     Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}
   - EnemyPrefub: {fileID: 3331699941403797790, guid: 26bea499e5e6f4143a6b644f8344197b, type: 3}
-    CountInWave: 0
+    CountInWave: 23
     WaitAfterWave: 5
     Path: {fileID: 11400000, guid: 32a6f20058e0fee40ba2050bf8db5068, type: 2}
