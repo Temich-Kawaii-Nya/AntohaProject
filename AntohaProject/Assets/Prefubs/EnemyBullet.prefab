@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 249200014475572703}
   - component: {fileID: 3639530811263084152}
   - component: {fileID: 83146603417235038}
-  m_Layer: 7
-  m_Name: Bullet
+  m_Layer: 9
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a144b3cacad1b741ba3fe565039fddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 20
   rigidbody2D: {fileID: 249200014475572702}
 --- !u!70 &3639530811263084152
 CapsuleCollider2D:
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615a23199a3a765439ab30f35a628b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 200

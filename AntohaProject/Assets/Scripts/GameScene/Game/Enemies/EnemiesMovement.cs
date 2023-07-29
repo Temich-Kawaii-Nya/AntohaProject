@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemiesMovement : MonoBehaviour
@@ -9,6 +10,7 @@ public class EnemiesMovement : MonoBehaviour
     [SerializeField] private PathData path;
     private int index;
     private Rigidbody2D rigidbody;
+    [SerializeField] private UnityEvent OnCheckPoint;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -25,6 +27,7 @@ public class EnemiesMovement : MonoBehaviour
             if (index < path.points.Count - 1)
             {
                 index++;
+                OnCheckPoint.Invoke();
             }
             else
                 Destroy(gameObject);

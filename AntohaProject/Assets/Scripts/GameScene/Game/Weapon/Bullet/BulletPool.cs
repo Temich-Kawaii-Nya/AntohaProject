@@ -1,28 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    private readonly List<GameObject> bullets = new List<GameObject>();
+    private readonly Dictionary<string,  List<GameObject>> bullets = new Dictionary<string, List<GameObject>>();
     public void AddBullets(GameObject prefub, int count)
     {
+        if(bullets.ContainsKey(prefub.name) == false)
+        {
+            bullets.Add(prefub.name, new List<GameObject>());
+        }
         for (int i = 0; i < count; i++)
         {
-            var bullet = Instantiate(prefub, transform);
-            bullet.SetActive(false);
-            bullets.Add(bullet);
+            Create(prefub);
         }
     }
-    public GameObject GetBullet()
+
+    private GameObject Create(GameObject prefub)
     {
-        for (int i = 0; i < bullets.Count; i++)
+        var bullet = Instantiate(prefub, transform);
+        bullet.SetActive(false);
+        bullets[prefub.name].Add(bullet);
+
+        return bullet;
+    }
+
+    public GameObject GetBullet(GameObject prefub)
+    {
+        if (bullets.ContainsKey(prefub.name))
         {
-            if (!bullets[i].activeInHierarchy)
+            for (int i = 0; i < bullets[prefub.name].Count; i++)
             {
-                return bullets[i];
+                if (!bullets[prefub.name][i].activeInHierarchy)
+                {
+                    return bullets[prefub.name][i];
+                }
             }
+            return Create(prefub);
         }
-        return null;
+        else
+            bullets.Add(prefub.name, new List<GameObject>());
+        return Create(prefub);
     }
 }

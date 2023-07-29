@@ -6,27 +6,21 @@ using UnityEngine;
 public abstract class WeaponBase : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefub;
-    private WaitForSeconds wait;
     protected BulletPool bulletsPool;
-    [SerializeField, Range(1, 20)] private int bulletsCount;
-    private void Start()
+    [SerializeField, Range(0, 20)] private int bulletsCount;
+    private void OnEnable()
     {
-        bulletsPool = FindObjectOfType<BulletPool>();
-        bulletsPool.AddBullets(bulletPrefub,bulletsCount);
+        if (bulletsPool == null)
+            bulletsPool = FindObjectOfType<BulletPool>();
+        if (bulletsCount > 0)
+            bulletsPool.AddBullets(bulletPrefub,bulletsCount);
     }
-    public void Activate()
+    protected void BulletActivate(Transform bulletStartPos)
     {
-        wait = new WaitForSeconds(0.5f);
-        StartCoroutine(Timer());
+        var bullet = bulletsPool.GetBullet(bulletPrefub);
+        bullet.transform.position = bulletStartPos.position;
+        bullet.transform.Rotate(transform.rotation.eulerAngles);
+        bullet.SetActive(true);
     }
-
-    private IEnumerator Timer()
-    {
-        while (true)
-        {
-            Shoot();
-            yield return wait;
-        }
-    }
-    protected abstract void Shoot();
+    public abstract void Shot();
 }

@@ -5,16 +5,8 @@ using UnityEngine;
 public class SingleWeapon : WeaponBase
 {
     [SerializeField] private Transform bulletStartPosition;
-    protected override void Shoot()
+    public override void Shot()
     {
-        var bullet = bulletsPool.GetBullet();
-        if (bullet != null)
-        {
-            bullet.transform.position = bulletStartPosition.position;
-            bullet.transform.Rotate(transform.rotation.eulerAngles);
-            bullet.SetActive(true);
-        }
-        else
-            Debug.Log("Null Bullet!");
+        BulletActivate(bulletStartPosition);
     }
 }
