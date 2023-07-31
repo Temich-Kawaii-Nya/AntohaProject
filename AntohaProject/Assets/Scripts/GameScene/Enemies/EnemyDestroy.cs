@@ -6,6 +6,6 @@ public class EnemyDestroy : MonoBehaviour
 {
     public void DestoyObject()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 0.01f);
     }
 }

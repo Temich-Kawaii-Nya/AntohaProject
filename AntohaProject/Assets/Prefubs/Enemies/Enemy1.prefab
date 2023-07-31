@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 9033208081647300436}
   - component: {fileID: -3064502352965705544}
   - component: {fileID: 4041201472081247855}
+  - component: {fileID: -3752178177747379792}
+  - component: {fileID: 1837602803848080135}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -151,13 +153,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae71dff8e35ff3d4b84a79a154f5cb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 400
+  maxHealth: 1
   OnHealthsEnded:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4041201472081247855}
         m_TargetAssemblyTypeName: EnemyDestroy, Assembly-CSharp
         m_MethodName: DestoyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -3752178177747379792}
+        m_TargetAssemblyTypeName: DestroyEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8969153246029794305}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -3064502352965705544}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1837602803848080135}
+        m_TargetAssemblyTypeName: ScoreObject, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -205,6 +255,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23160562224ffe4eb8eb3f7add64b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3752178177747379792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331699941403797790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47840fa12e6fa143a46bb53861d62e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1837602803848080135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331699941403797790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e9d70ec95d5ea4b8167accaf65c48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 200
 --- !u!1001 &1689369438610559575
 PrefabInstance:
   m_ObjectHideFlags: 0

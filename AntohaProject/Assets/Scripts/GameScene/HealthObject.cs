@@ -21,9 +21,21 @@ public class HealthObject : MonoBehaviour, IDamagable
             OnHealthsEnded.Invoke();
         }
     }
-
     protected virtual void OnEnable()
     {
         currentHealth = maxHealth;
+    }
+    public void AddHealth(int value)
+    {
+        if (value > 0)
+        {
+            currentHealth += value;
+            if (currentHealth > maxHealth)
+                GetExtraHealth(maxHealth % currentHealth);
+        }
+    }
+    private void GetExtraHealth(int value)
+    {
+        maxHealth += value;
     }
 }
