@@ -5,9 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private FloatingJoystick joystick;
     private Rigidbody2D rb2d;
-    private float speed = 5f;
+    [SerializeField] private float speed = 5f;
     private Vector2 direction;
     private void Awake()
     {
@@ -15,12 +14,19 @@ public class PlayerMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
-        {
-            direction.x = joystick.Horizontal;
-            direction.y = joystick.Vertical;
-            rb2d.MovePosition(rb2d.position + speed * Time.fixedDeltaTime * direction);
-        }
+        rb2d.MovePosition(rb2d.position + speed * Time.fixedDeltaTime * direction);
+    }
+    private void OnEnable()
+    {
+        PlayerInput.OnMove += SetDirection;
+    }
+    private void OnDisable()
+    {
+        PlayerInput.OnMove -= SetDirection;
+    }
+    private void SetDirection(Vector2 direction)
+    {
+        this.direction = direction;
     }
 
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class BaseBonus : MonoBehaviour
 {
     [SerializeField] private int speed = 5;

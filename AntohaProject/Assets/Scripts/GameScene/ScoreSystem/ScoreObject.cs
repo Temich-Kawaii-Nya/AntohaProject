@@ -11,4 +11,9 @@ public class ScoreObject : MonoBehaviour
     {
         OnChanged?.Invoke(score);
     }
+    public void Activate(int value)
+    {
+        OnChanged?.Invoke(value);
+    }
+    public int GetScore => score;
 }
