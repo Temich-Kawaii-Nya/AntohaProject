@@ -9,6 +9,7 @@ public class BaseBonus : MonoBehaviour
 {
     [SerializeField] private int speed = 5;
     [SerializeField] private UnityEvent BonusActivated;
+    private Transform target = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent(out PlayerMove player))
@@ -25,8 +26,20 @@ public class BaseBonus : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(speed * Time.deltaTime * Vector2.down);
-        if (transform.position.y < new SafeAreaData().GetMin().y - 5f)
-            gameObject.SetActive(false);
+        if (target == null)
+        {
+            transform.Translate(speed * Time.deltaTime * Vector2.down);
+            if (transform.position.y < new SafeAreaData().GetMin().y - 5f)
+                gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.position = Vector2.Lerp(transform.position, target.position, speed * 1.5f * Time.deltaTime);
+        }
+        
+    }
+    public void MoveToPlayer(Transform player)
+    {
+        target = player;
     }
 }
